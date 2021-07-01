@@ -39,15 +39,11 @@
                 <h2 class="page-subtitle">Options</h2>
 
                 <div class="mode-containter">
-                    <div class="mode-option">
-                        <input type="radio" id="encode" name="mode" checked>
-                        <label for="encode" class="option-label">Encode</label>
-                    </div>
-                    
-                    <div class="mode-option">
-                        <input type="radio" id="decode" name="mode">
-                        <label for="decode" class="option-label">Decode</label>
-                    </div>
+                    <label class="option-label">Mode</label>
+                    <select class="mode-field" id="mode">
+                        <option value="encode">Encode</option>
+                        <option value="decode">Decode</option>
+                    </select>
                 </div>
 
                 <label class="option-label">Key</label>

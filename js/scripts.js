@@ -7,8 +7,7 @@ let outputField = document.querySelector(".output-field");
 let outputFieldTitle = document.querySelector(".output-field-title");
 let keyField = document.querySelector(".key-field");
 let actionButton = document.querySelector(".action-button");
-let encodeRadio = document.querySelector("#encode");
-let decodeRadio = document.querySelector("#decode");
+let modeSelect = document.querySelector("#mode");
 
 let mode = "encode";
 
@@ -24,19 +23,15 @@ actionButton.onclick = () => {
     }
 };
 
-encodeRadio.onclick = () => {
-    if (mode === "decode") {
+modeSelect.addEventListener('change', function() {
+    if (this.value === "encode") {
         mode = "encode";
         actionButton.textContent = "Encrypt";
         inputFieldTitle.textContent = "Plaintext";
         outputFieldTitle.textContent = "Ciphertext";
         [inputField.value, outputField.value] = [outputField.value, inputField.value];
         inputField.placeholder = "e.g., Hello, world!";
-    }
-};
-
-decodeRadio.onclick = () => {
-    if (mode === "encode") {
+    } else if (this.value === "decode") {
         mode = "decode";
         actionButton.textContent = "Decrypt";
         inputFieldTitle.textContent = "Ciphertext";
@@ -44,7 +39,7 @@ decodeRadio.onclick = () => {
         [inputField.value, outputField.value] = [outputField.value, inputField.value];
         inputField.placeholder = "e.g., Hsclb, csfcd!";
     }
-};
+});
 
 function encode() {
     checkAlphabet(alphabetField);
