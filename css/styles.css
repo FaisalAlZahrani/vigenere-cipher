@@ -199,3 +199,7 @@ input, textarea {
         justify-content: center;
     }
 }
+
+input[type="radio"] {
+    margin-left: 0;
+}
