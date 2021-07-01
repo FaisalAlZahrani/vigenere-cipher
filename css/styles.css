@@ -204,3 +204,11 @@ input, textarea {
         justify-content: center;
     }
 }
+
+.alphabet-field, .input-field, .output-field, .mode-field, .key-field, .action-button {
+    transition: transform .2s;
+}
+
+.alphabet-field:hover, .input-field:hover, .output-field:hover, .mode-field:hover, .key-field:hover, .action-button:hover {
+    transform: scale(1.03);
+}
