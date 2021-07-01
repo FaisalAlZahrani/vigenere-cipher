@@ -31,6 +31,7 @@ encodeRadio.onclick = () => {
         inputFieldTitle.textContent = "Plaintext";
         outputFieldTitle.textContent = "Ciphertext";
         [inputField.value, outputField.value] = [outputField.value, inputField.value];
+        inputField.placeholder = "e.g., Hello, world!";
     }
 };
 
@@ -41,6 +42,7 @@ decodeRadio.onclick = () => {
         inputFieldTitle.textContent = "Ciphertext";
         outputFieldTitle.textContent = "Plaintext";
         [inputField.value, outputField.value] = [outputField.value, inputField.value];
+        inputField.placeholder = "e.g., Hsclb, csfcd!";
     }
 };
 
