@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vigenère cipher</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Vigenère cipher</h1>
+
+        <div class="alphabet-container">
+            <h2 class="page-subtitle alphabet-title">Alphabet:</h2>
+            <input type="text" class="alphabet-field" placeholder="Enter your alphabet here" value="abcdefghijklmnopqrstuvwxyz" spellcheck="false" required>
+        </div>
+
+        <div class="text-and-options-container">
+            <div class="text-container">
+                <h2 class="page-subtitle input-field-title">Plaintext</h2>
+                <textarea class="text-area input-field" spellcheck="false"></textarea>
+            </div>
+
+            <div class="options-container">
+                <h2 class="page-subtitle">Options</h2>
+
+                <div class="mode-containter">
+                    <div class="mode-option">
+                        <input type="radio" id="encode" name="mode" checked>
+                        <label for="encode" class="option-label">Encode</label>
+                    </div>
+                    
+                    <div class="mode-option">
+                        <input type="radio" id="decode" name="mode">
+                        <label for="decode" class="option-label">Decode</label>
+                    </div>
+                </div>
+
+                <label class="option-label">Key</label>
+                <input type="text" class="key-field" placeholder="Enter your key here" spellcheck="false" required>
+            </div>
+
+            <div class="text-container">
+                <h2 class="page-subtitle output-field-title">Ciphertext</h2>
+                <textarea class="text-area output-field" spellcheck="false"></textarea>
+            </div>
+        </div>
+
+        <div class="actions-container">
+            <div class="action-button">Encrypt</div>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+</body>
+</html>
