@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-color: #E8A87C;
+    background-color: #A1C3D1;
 }
 
 .container {
@@ -11,16 +11,29 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 3rem;
+    margin: 2rem;
+    background-color: #F0EBF4;
+    padding: 5rem;
+}
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 7rem;
+}
+
+.logo {
+    width: 20%;
 }
 
 .page-title {
-    color: #41B3A3;
-    font-size: 6rem;
+    color: #E64398;
+    font-size: 4vw;
     font-family: Arial, Helvetica, sans-serif;
-    letter-spacing: 4px;
-    margin-bottom: 7rem;
     text-align: center;
+    font-weight: 800;
 }
 
 .alphabet-container {
@@ -32,7 +45,7 @@ body {
 }
 
 .page-subtitle {
-    color: #41B3A3;
+    color: #E64398;
     font-size: 3.5rem;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -69,7 +82,7 @@ body {
 }
 
 .option-label {
-    color: #41B3A3;
+    color: #E64398;
     font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -118,11 +131,11 @@ body {
 
 .action-button {
     height: 6rem;
-    background-color: #41B3A3;
+    background-color: #E64398;
     border: none;
     outline: none;
     font-size: 3rem;
-    color: white;
+    color: #FFFFFF;
     border-radius: 5px;
     box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
     font-family: Arial, Helvetica, sans-serif;
@@ -155,7 +168,20 @@ input, textarea {
     box-sizing: border-box;
 }
 
-@media only screen and (max-width: 930px) {
+@media only screen and (max-width: 1060px) {
+    .container {
+        margin: 1rem;
+        padding: 2rem;
+    }
+
+    .logo {
+        width: 30%;
+    }
+
+    .page-title {
+        font-size: 7vw;
+    }
+
     .text-and-options-container {
         flex-direction: column;
     }
