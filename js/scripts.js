@@ -15,7 +15,8 @@ let commonCharField = document.querySelector(".common-char-field");
 let solveOptions = document.querySelectorAll(".solve-option");
 let solutionInfo = document.querySelector(".solution-info");
 
-let mode = "encode";
+let previousMode = "";
+let currentMode = "encode";
 
 let solveModeAlphabet;
 let solveModeCiphertext;
@@ -27,11 +28,11 @@ let solveModeDecryptionKeys = [];
 
 actionButton.onclick = () => {
     try {
-        if (mode === "encode")
+        if (currentMode === "encode")
             encode();
-        else if (mode === "decode")
+        else if (currentMode === "decode")
             decode();
-        else if (mode === "solve")
+        else if (currentMode === "solve")
             solve();
     } catch (error) {
         console.log(error);
@@ -41,7 +42,8 @@ actionButton.onclick = () => {
 
 modeSelect.addEventListener('change', function() {
     if (this.value === "encode") {
-        mode = "encode";
+        previousMode = currentMode;
+        currentMode = "encode";
 
         keyOption.style.display = "flex";
         solutionInfo.style.display = "none";
@@ -54,9 +56,13 @@ modeSelect.addEventListener('change', function() {
         outputFieldTitle.textContent = "Ciphertext";
         inputField.placeholder = "e.g., Hello, world!";
 
-        [inputField.value, outputField.value] = [outputField.value, inputField.value];
+        if (previousMode === "decode")
+            [inputField.value, outputField.value] = [outputField.value, inputField.value];
+        else if (previousMode === "solve")
+            [inputField.value, outputField.value] = ["", ""];
     } else if (this.value === "decode") {
-        mode = "decode";
+        previousMode = currentMode;
+        currentMode = "decode";
 
         keyOption.style.display = "flex";
         solutionInfo.style.display = "none";
@@ -69,9 +75,13 @@ modeSelect.addEventListener('change', function() {
         outputFieldTitle.textContent = "Plaintext";
         inputField.placeholder = "e.g., Hsclb, csfcd!";
 
-        [inputField.value, outputField.value] = [outputField.value, inputField.value];
+        if (previousMode === "encode")
+            [inputField.value, outputField.value] = [outputField.value, inputField.value];
+        else if (previousMode === "solve")
+            [inputField.value, outputField.value] = ["", ""];
     } else if (this.value === "solve") {
-        mode = "solve";
+        previousMode = currentMode;
+        currentMode = "solve";
 
         keyOption.style.display = "none";
         solutionInfo.style.display = "block";
@@ -83,6 +93,19 @@ modeSelect.addEventListener('change', function() {
         inputFieldTitle.textContent = "Ciphertext";
         outputFieldTitle.textContent = "Possible Solution";
         inputField.placeholder = "e.g., Hsclb, csfcd!";
+
+        if (previousMode === "encode") {
+            inputField.value = outputField.value;
+            outputField.value = "";
+
+            if (keyField.value)
+                keyLengthField.value = `${keyField.value.length}-${keyField.value.length}`;
+        } else if (previousMode === "decode") {
+            outputField.value = "";
+
+            if (keyField.value)
+                keyLengthField.value = `${keyField.value.length}-${keyField.value.length}`;
+        }
     }
 });
 
