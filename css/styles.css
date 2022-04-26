@@ -17,7 +17,7 @@ body {
     margin: 0 2rem;
     padding: 0 5rem;
     border-radius: 5px;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .alphabet-container {
@@ -178,16 +178,8 @@ input, textarea {
 
 @media only screen and (max-width: 1060px) {
     .container {
-        margin: 1rem;
+        margin: 3rem 0;
         padding: 2rem;
-    }
-
-    .logo {
-        width: 30%;
-    }
-
-    .page-title {
-        font-size: 7vw;
     }
 
     .text-and-options-container {
